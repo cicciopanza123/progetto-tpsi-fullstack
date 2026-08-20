@@ -63,7 +63,48 @@ def get_prodotti():
 
     cursor.close()
     connection.close()
-
     return jsonify(prodotti)
+
+
+
+@app.route("/api/prodotti/<int:id>")
+def get_prodotto(id):
+    connection = get_db_connection()
+
+    cursor = connection.cursor()
+
+    query = """
+        SELECT
+            id,
+            nome,
+            prezzo,
+            ROUND(prezzo * 1.22, 2) AS prezzo_ivato
+        FROM prodotti
+        WHERE id = %s
+    """
+    cursor.execute(query, (id,))
+
+    record = cursor.fetchone()
+    if record is None:
+        cursor.close()
+        connection.close()
+
+        return jsonify({
+            "message": "Prodotto non trovato"
+        }), 404
+
+    prodotto = {
+        "id": record[0],
+        "nome": record[1],
+        "prezzo": float(record[2]),
+        "prezzo_ivato": float(record[3])
+    }
+
+    cursor.close()
+    connection.close()
+
+    return jsonify(prodotto)
+
+
 if __name__ == "__main__":
     app.run(debug=True)
