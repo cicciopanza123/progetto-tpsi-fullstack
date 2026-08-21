@@ -1,10 +1,11 @@
 import { Component, OnInit, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { ProdottoService } from '../services/prodotto.service';
 import { Prodotto } from '../models/prodotto.model';
 
 @Component({
   selector: 'app-lista-prodotti',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './lista-prodotti.html',
   styleUrl: './lista-prodotti.css',
 })

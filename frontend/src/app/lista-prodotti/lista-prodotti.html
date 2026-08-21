@@ -13,12 +13,8 @@
 
       <p>Prezzo IVA: € {{ prodotto.prezzo_ivato }}</p>
 
-      <button>
+      <button [routerLink]="['/prodotto', prodotto.id]">
         Vedi Dettaglio
-      </button>
-
-      <button>
-        Aggiungi al carrello
       </button>
     </div>
 
