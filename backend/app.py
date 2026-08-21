@@ -107,6 +107,5 @@ def get_prodotto(id):
 
     return jsonify(prodotto)
 
-
 if __name__ == "__main__":
     app.run(debug=True)

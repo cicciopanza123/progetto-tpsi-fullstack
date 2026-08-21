@@ -1,0 +1,17 @@
+<h1>Dettaglio Prodotto</h1>
+
+@if (prodotto(); as p) {
+
+  <h2>{{ p.nome }}</h2>
+
+  <p>ID prodotto: {{ p.id }}</p>
+
+  <p>Prezzo: € {{ p.prezzo }}</p>
+
+  <p>Prezzo IVA: € {{ p.prezzo_ivato }}</p>
+
+} @else {
+
+  <p>Caricamento...</p>
+
+}
