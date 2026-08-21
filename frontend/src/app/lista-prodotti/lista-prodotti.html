@@ -1,0 +1,27 @@
+<h1>Lista Prodotti</h1>
+
+@if (loading()) {
+  <p>Caricamento...</p>
+} @else {
+
+  @for (prodotto of prodotti; track prodotto.id) {
+
+    <div>
+      <h2>{{ prodotto.nome }}</h2>
+
+      <p>Prezzo: € {{ prodotto.prezzo }}</p>
+
+      <p>Prezzo IVA: € {{ prodotto.prezzo_ivato }}</p>
+
+      <button>
+        Vedi Dettaglio
+      </button>
+
+      <button>
+        Aggiungi al carrello
+      </button>
+    </div>
+
+  }
+
+}
