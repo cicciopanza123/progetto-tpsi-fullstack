@@ -1,0 +1,141 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  padding: 40px 30px;
+  background: linear-gradient(135deg, #eef2ff, #fdf2f8);
+}
+
+h1 {
+  text-align: center;
+  color: #1e293b;
+  font-size: 36px;
+  margin-bottom: 35px;
+}
+
+a {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 35px;
+  padding: 13px 24px;
+  background: #7c3aed;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(124, 58, 237, 0.3);
+  transition: 0.2s;
+}
+
+a:hover {
+  background: #6d28d9;
+  transform: translateY(-2px);
+}
+
+/* NOTIFICA */
+
+.notifica {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  z-index: 1000;
+
+  padding: 16px 22px;
+
+  background: #16a34a;
+  color: white;
+
+  border-radius: 10px;
+
+  font-weight: bold;
+  font-size: 16px;
+
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+
+  animation: comparsa 0.25s ease-out;
+}
+
+@keyframes comparsa {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* CARD PRODOTTO */
+
+.prodotto-card {
+  max-width: 900px;
+  margin: 0 auto 22px;
+  padding: 25px;
+
+  background: white;
+
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.1);
+
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.prodotto-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.15);
+}
+
+.prodotto-card h2 {
+  margin-top: 0;
+  color: #312e81;
+  font-size: 23px;
+}
+
+.prodotto-card p {
+  color: #475569;
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+/* BOTTONI */
+
+button {
+  padding: 11px 18px;
+  margin: 18px 8px 0 0;
+
+  border: none;
+  border-radius: 9px;
+
+  color: white;
+
+  font-weight: bold;
+  font-size: 14px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.dettaglio {
+  background: #2563eb;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+}
+
+.carrello {
+  background: #16a34a;
+  box-shadow: 0 4px 10px rgba(22, 163, 74, 0.3);
+}
+
+.caricamento {
+  text-align: center;
+  font-size: 18px;
+  color: #475569;
+}

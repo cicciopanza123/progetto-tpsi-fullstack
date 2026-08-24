@@ -16,6 +16,8 @@ export class ListaProdotti implements OnInit {
 
   loading = signal(true);
 
+  notifica = signal('');
+
   constructor(
     private prodottoService: ProdottoService,
     private cartService: CartService
@@ -38,7 +40,14 @@ export class ListaProdotti implements OnInit {
 
   aggiungiAlCarrello(prodotto: Prodotto): void {
     this.cartService.aggiungiProdotto(prodotto);
-    console.log('CARRELLO:', this.cartService.getProdotti());
+
+    this.notifica.set(
+      `${prodotto.nome} aggiunto al carrello!`
+    );
+
+    setTimeout(() => {
+      this.notifica.set('');
+    }, 2500);
   }
 
 }
